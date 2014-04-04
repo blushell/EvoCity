@@ -27,7 +27,7 @@ import evocity.proxies.*;
 public class EvoCity {
 	
 	@Instance(ModInfo.ID)
-	public static Instance EvoCity;
+	public static EvoCity Instance;
 		
 	@SidedProxy( clientSide= "evocity.proxies.ClientProxy", serverSide= "evocity.proxies.CommonProxy")
 	public static CommonProxy proxy;
