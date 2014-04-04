@@ -22,7 +22,7 @@ import evocity.lib.*;
 import evocity.proxies.*;
 
 @Mod( modid = ModInfo.ID, name = ModInfo.NAME, version = ModInfo.VERSION )
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+@NetworkMod(clientSideRequired = false, serverSideRequired = false)
 
 public class EvoCity {
 	
@@ -46,7 +46,7 @@ public class EvoCity {
     };
 	
 	@EventHandler
-	public static void preInit ( FMLPreInitializationEvent event ) {
+	public void preInit ( FMLPreInitializationEvent event ) {
 		proxy.initRenderers();
 		proxy.initSounds();
 		Items.init();
@@ -57,20 +57,8 @@ public class EvoCity {
 	}
 	
 	@EventHandler 
-	public static void init(FMLInitializationEvent event){		
+	public void init(FMLInitializationEvent event){		
         LanguageRegistry.instance().addStringLocalization("itemGroup.EvoCityTab", "en_US", "evocitytab");
 
 	}
-	
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event)
-    {
-
-    }
-    
-    @EventHandler
-    public static void serverLoad(FMLServerStartingEvent event)
-    {
-
-    }
 }
